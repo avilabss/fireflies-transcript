@@ -1,0 +1,142 @@
+query fetchNotepadMeeting($meetingNoteId: String, $password: String, $shareSlug: String) {
+  meetingNote(_id: $meetingNoteId, password: $password, shareSlug: $shareSlug) {
+    _id
+    transcriptParseId
+    ownersList
+    privacyList {
+      email
+      actualPrivacy
+      domain
+      __typename
+    }
+    captions {
+      index
+      sentence
+      speaker_id
+      time
+      endTime
+      match
+      metrics {
+        word
+        category
+        __typename
+      }
+      sentiment
+      sentimentType
+      filterType
+      __typename
+    }
+    attendees {
+      email
+      name
+      picture
+      displayName
+      __typename
+    }
+    title
+    audio_url
+    date
+    parseId
+    processMeetingStatus
+    createdAt
+    hasCaptions
+    creator_email
+    waveformData
+    userPermission
+    privacy
+    retranscribeCount
+    customLanguage
+    owner
+    ownerProfile {
+      name
+      email
+      picture
+      canUseAICredits
+      tier
+      __typename
+    }
+    audioOnly
+    speakerMeta
+    sentenceMeta
+    paragraphMeta
+    labelMeta
+    topicMeta
+    isGuestAccessEnabled
+    video_url
+    recordingPreference
+    txService
+    puppetStates {
+      status
+      elapsedTime
+      timeSpent
+      time
+      __typename
+    }
+    joinedUsers {
+      participantName
+      timestamp
+      time
+      type
+      __typename
+    }
+    defaultChannelAccess
+    audioServiceMetadata {
+      silentMeeting
+      languageCode
+      preferredLanguage
+      numCaptions
+      skipSummaryReason
+      hasGeneratedInstantSummary
+      hasManualNotesMerged
+      __typename
+    }
+    addedBy
+    isScreenRecording
+    recorderMetadata {
+      recorder_type
+      __typename
+    }
+    allEmails
+    durationMins
+    meetingExpirySettings {
+      meetingTtl
+      unit
+      deletionTime
+      __typename
+    }
+    summary {
+      gist
+      shortSummary
+      __typename
+    }
+    summaryStatus
+    channel {
+      _id
+      title
+      isPrivate
+      __typename
+    }
+    channels {
+      _id
+      title
+      isPrivate
+      __typename
+    }
+    allEmailsProfiles {
+      email
+      name
+      picture
+      __typename
+    }
+    isVideoAvailable
+    expandSummaryItemCount
+    allEmailsSentTo
+    isOnPrivateStorage
+    manualNotes {
+      notes
+      shouldMerge
+      __typename
+    }
+    __typename
+  }
+}
